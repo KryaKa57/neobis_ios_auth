@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		64528F9C2B20800D00855E7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528F9B2B20800D00855E7E /* AppDelegate.swift */; };
+		64528F9E2B20800D00855E7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528F9D2B20800D00855E7E /* SceneDelegate.swift */; };
+		64528FA02B20800D00855E7E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528F9F2B20800D00855E7E /* LoginController.swift */; };
+		64528FA52B20800E00855E7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64528FA42B20800E00855E7E /* Assets.xcassets */; };
+		64528FA82B20800E00855E7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64528FA62B20800E00855E7E /* LaunchScreen.storyboard */; };
+		64528FCA2B20819100855E7E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528FC92B20819100855E7E /* LoginView.swift */; };
+		64528FD22B20829D00855E7E /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528FD12B20829D00855E7E /* Extension + UIColor.swift */; };
+		64528FD42B2082D000855E7E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528FD32B2082D000855E7E /* CustomButton.swift */; };
+		64528FD62B2082F000855E7E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528FD52B2082F000855E7E /* CustomTextField.swift */; };
+		64528FD92B20830F00855E7E /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528FD82B20830F00855E7E /* CustomLabel.swift */; };
+		64528FDB2B20832300855E7E /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528FDA2B20832300855E7E /* MainController.swift */; };
+		64528FDD2B20833400855E7E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528FDC2B20833400855E7E /* MainView.swift */; };
+		64528FDF2B20834E00855E7E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528FDE2B20834E00855E7E /* RegisterView.swift */; };
+		64528FE12B20836800855E7E /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528FE02B20836800855E7E /* RegisterController.swift */; };
+		64528FE32B20837C00855E7E /* SendMailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528FE22B20837C00855E7E /* SendMailController.swift */; };
+		64528FE52B20838D00855E7E /* SendMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528FE42B20838D00855E7E /* SendMailView.swift */; };
+		64528FF12B20843300855E7E /* gothampro_mediumitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64528FE72B20843300855E7E /* gothampro_mediumitalic.ttf */; };
+		64528FF22B20843300855E7E /* gothampro_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64528FE82B20843300855E7E /* gothampro_medium.ttf */; };
+		64528FF32B20843300855E7E /* gothampro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64528FE92B20843300855E7E /* gothampro.ttf */; };
+		64528FF42B20843300855E7E /* gothampro_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64528FEA2B20843300855E7E /* gothampro_bold.ttf */; };
+		64528FF52B20843300855E7E /* gothampro_black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64528FEB2B20843300855E7E /* gothampro_black.ttf */; };
+		64528FF62B20843300855E7E /* gothampro_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64528FEC2B20843300855E7E /* gothampro_italic.ttf */; };
+		64528FF72B20843300855E7E /* gothampro_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64528FED2B20843300855E7E /* gothampro_light.ttf */; };
+		64528FF82B20843300855E7E /* gothampro_lightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64528FEE2B20843300855E7E /* gothampro_lightitalic.ttf */; };
+		64528FF92B20843300855E7E /* gothampro_blackitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64528FEF2B20843300855E7E /* gothampro_blackitalic.ttf */; };
+		64528FFA2B20843300855E7E /* gothampro_bolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64528FF02B20843300855E7E /* gothampro_bolditalic.ttf */; };
+		75F4017B0A12C4E8CFE78F32 /* Pods_neobis_ios_auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591288E31A82AB1BF2AAFC53 /* Pods_neobis_ios_auth.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		591288E31A82AB1BF2AAFC53 /* Pods_neobis_ios_auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_neobis_ios_auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64528F982B20800D00855E7E /* neobis_ios_auth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = neobis_ios_auth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64528F9B2B20800D00855E7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		64528F9D2B20800D00855E7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		64528F9F2B20800D00855E7E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		64528FA42B20800E00855E7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		64528FA72B20800E00855E7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		64528FA92B20800E00855E7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64528FC92B20819100855E7E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		64528FD12B20829D00855E7E /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
+		64528FD32B2082D000855E7E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		64528FD52B2082F000855E7E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		64528FD82B20830F00855E7E /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		64528FDA2B20832300855E7E /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		64528FDC2B20833400855E7E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		64528FDE2B20834E00855E7E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		64528FE02B20836800855E7E /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		64528FE22B20837C00855E7E /* SendMailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMailController.swift; sourceTree = "<group>"; };
+		64528FE42B20838D00855E7E /* SendMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMailView.swift; sourceTree = "<group>"; };
+		64528FE72B20843300855E7E /* gothampro_mediumitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_mediumitalic.ttf; sourceTree = "<group>"; };
+		64528FE82B20843300855E7E /* gothampro_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_medium.ttf; sourceTree = "<group>"; };
+		64528FE92B20843300855E7E /* gothampro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro.ttf; sourceTree = "<group>"; };
+		64528FEA2B20843300855E7E /* gothampro_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_bold.ttf; sourceTree = "<group>"; };
+		64528FEB2B20843300855E7E /* gothampro_black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_black.ttf; sourceTree = "<group>"; };
+		64528FEC2B20843300855E7E /* gothampro_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_italic.ttf; sourceTree = "<group>"; };
+		64528FED2B20843300855E7E /* gothampro_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_light.ttf; sourceTree = "<group>"; };
+		64528FEE2B20843300855E7E /* gothampro_lightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_lightitalic.ttf; sourceTree = "<group>"; };
+		64528FEF2B20843300855E7E /* gothampro_blackitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_blackitalic.ttf; sourceTree = "<group>"; };
+		64528FF02B20843300855E7E /* gothampro_bolditalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_bolditalic.ttf; sourceTree = "<group>"; };
+		792C6D2E752D6E93FB346A6E /* Pods-neobis_ios_auth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-neobis_ios_auth.debug.xcconfig"; path = "Target Support Files/Pods-neobis_ios_auth/Pods-neobis_ios_auth.debug.xcconfig"; sourceTree = "<group>"; };
+		D257BC9FDEA04D929002AA37 /* Pods-neobis_ios_auth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-neobis_ios_auth.release.xcconfig"; path = "Target Support Files/Pods-neobis_ios_auth/Pods-neobis_ios_auth.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		64528F952B20800D00855E7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75F4017B0A12C4E8CFE78F32 /* Pods_neobis_ios_auth.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		64528F8F2B20800D00855E7E = {
+			isa = PBXGroup;
+			children = (
+				64528F9A2B20800D00855E7E /* neobis_ios_auth */,
+				64528F992B20800D00855E7E /* Products */,
+				B0B4041DC686F2C2480FEE40 /* Pods */,
+				6EB56DB548A7CA4DB22AA1BE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		64528F992B20800D00855E7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64528F982B20800D00855E7E /* neobis_ios_auth.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64528F9A2B20800D00855E7E /* neobis_ios_auth */ = {
+			isa = PBXGroup;
+			children = (
+				64528FCF2B20826100855E7E /* Custom UI views */,
+				64528FCE2B20825800855E7E /* MainScreen */,
+				64528FCD2B20824A00855E7E /* LoginScreen */,
+				64528FCC2B20824000855E7E /* RegisterScreen */,
+				64528FCB2B20823200855E7E /* SendMailScreen */,
+				64528FAF2B20804800855E7E /* Supporting files */,
+				64528FD02B20826D00855E7E /* Extensions */,
+				64528FA92B20800E00855E7E /* Info.plist */,
+			);
+			path = neobis_ios_auth;
+			sourceTree = "<group>";
+		};
+		64528FAF2B20804800855E7E /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				64528FE62B20843300855E7E /* Fonts */,
+				64528F9B2B20800D00855E7E /* AppDelegate.swift */,
+				64528F9D2B20800D00855E7E /* SceneDelegate.swift */,
+				64528FA62B20800E00855E7E /* LaunchScreen.storyboard */,
+				64528FA42B20800E00855E7E /* Assets.xcassets */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		64528FCB2B20823200855E7E /* SendMailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				64528FE22B20837C00855E7E /* SendMailController.swift */,
+				64528FE42B20838D00855E7E /* SendMailView.swift */,
+			);
+			path = SendMailScreen;
+			sourceTree = "<group>";
+		};
+		64528FCC2B20824000855E7E /* RegisterScreen */ = {
+			isa = PBXGroup;
+			children = (
+				64528FDE2B20834E00855E7E /* RegisterView.swift */,
+				64528FE02B20836800855E7E /* RegisterController.swift */,
+			);
+			path = RegisterScreen;
+			sourceTree = "<group>";
+		};
+		64528FCD2B20824A00855E7E /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				64528F9F2B20800D00855E7E /* LoginController.swift */,
+				64528FC92B20819100855E7E /* LoginView.swift */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		64528FCE2B20825800855E7E /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				64528FDA2B20832300855E7E /* MainController.swift */,
+				64528FDC2B20833400855E7E /* MainView.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		64528FCF2B20826100855E7E /* Custom UI views */ = {
+			isa = PBXGroup;
+			children = (
+				64528FD32B2082D000855E7E /* CustomButton.swift */,
+				64528FD52B2082F000855E7E /* CustomTextField.swift */,
+				64528FD82B20830F00855E7E /* CustomLabel.swift */,
+			);
+			path = "Custom UI views";
+			sourceTree = "<group>";
+		};
+		64528FD02B20826D00855E7E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				64528FD12B20829D00855E7E /* Extension + UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		64528FE62B20843300855E7E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				64528FE72B20843300855E7E /* gothampro_mediumitalic.ttf */,
+				64528FE82B20843300855E7E /* gothampro_medium.ttf */,
+				64528FE92B20843300855E7E /* gothampro.ttf */,
+				64528FEA2B20843300855E7E /* gothampro_bold.ttf */,
+				64528FEB2B20843300855E7E /* gothampro_black.ttf */,
+				64528FEC2B20843300855E7E /* gothampro_italic.ttf */,
+				64528FED2B20843300855E7E /* gothampro_light.ttf */,
+				64528FEE2B20843300855E7E /* gothampro_lightitalic.ttf */,
+				64528FEF2B20843300855E7E /* gothampro_blackitalic.ttf */,
+				64528FF02B20843300855E7E /* gothampro_bolditalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6EB56DB548A7CA4DB22AA1BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				591288E31A82AB1BF2AAFC53 /* Pods_neobis_ios_auth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0B4041DC686F2C2480FEE40 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				792C6D2E752D6E93FB346A6E /* Pods-neobis_ios_auth.debug.xcconfig */,
+				D257BC9FDEA04D929002AA37 /* Pods-neobis_ios_auth.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		64528F972B20800D00855E7E /* neobis_ios_auth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64528FAC2B20800E00855E7E /* Build configuration list for PBXNativeTarget "neobis_ios_auth" */;
+			buildPhases = (
+				2645841A2907D2DB2BBEC6AC /* [CP] Check Pods Manifest.lock */,
+				64528F942B20800D00855E7E /* Sources */,
+				64528F952B20800D00855E7E /* Frameworks */,
+				64528F962B20800D00855E7E /* Resources */,
+				1DA8869CDF081CE5B9FC3916 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = neobis_ios_auth;
+			productName = neobis_ios_auth;
+			productReference = 64528F982B20800D00855E7E /* neobis_ios_auth.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64528F902B20800D00855E7E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					64528F972B20800D00855E7E = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 64528F932B20800D00855E7E /* Build configuration list for PBXProject "neobis_ios_auth" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 64528F8F2B20800D00855E7E;
+			productRefGroup = 64528F992B20800D00855E7E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64528F972B20800D00855E7E /* neobis_ios_auth */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		64528F962B20800D00855E7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64528FF72B20843300855E7E /* gothampro_light.ttf in Resources */,
+				64528FF82B20843300855E7E /* gothampro_lightitalic.ttf in Resources */,
+				64528FF32B20843300855E7E /* gothampro.ttf in Resources */,
+				64528FF42B20843300855E7E /* gothampro_bold.ttf in Resources */,
+				64528FF92B20843300855E7E /* gothampro_blackitalic.ttf in Resources */,
+				64528FA82B20800E00855E7E /* LaunchScreen.storyboard in Resources */,
+				64528FF22B20843300855E7E /* gothampro_medium.ttf in Resources */,
+				64528FF12B20843300855E7E /* gothampro_mediumitalic.ttf in Resources */,
+				64528FA52B20800E00855E7E /* Assets.xcassets in Resources */,
+				64528FF62B20843300855E7E /* gothampro_italic.ttf in Resources */,
+				64528FF52B20843300855E7E /* gothampro_black.ttf in Resources */,
+				64528FFA2B20843300855E7E /* gothampro_bolditalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DA8869CDF081CE5B9FC3916 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-neobis_ios_auth/Pods-neobis_ios_auth-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-neobis_ios_auth/Pods-neobis_ios_auth-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-neobis_ios_auth/Pods-neobis_ios_auth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2645841A2907D2DB2BBEC6AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-neobis_ios_auth-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64528F942B20800D00855E7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64528FDF2B20834E00855E7E /* RegisterView.swift in Sources */,
+				64528FD62B2082F000855E7E /* CustomTextField.swift in Sources */,
+				64528FA02B20800D00855E7E /* LoginController.swift in Sources */,
+				64528F9C2B20800D00855E7E /* AppDelegate.swift in Sources */,
+				64528FDD2B20833400855E7E /* MainView.swift in Sources */,
+				64528FD42B2082D000855E7E /* CustomButton.swift in Sources */,
+				64528FDB2B20832300855E7E /* MainController.swift in Sources */,
+				64528FCA2B20819100855E7E /* LoginView.swift in Sources */,
+				64528FE32B20837C00855E7E /* SendMailController.swift in Sources */,
+				64528FE12B20836800855E7E /* RegisterController.swift in Sources */,
+				64528F9E2B20800D00855E7E /* SceneDelegate.swift in Sources */,
+				64528FD22B20829D00855E7E /* Extension + UIColor.swift in Sources */,
+				64528FD92B20830F00855E7E /* CustomLabel.swift in Sources */,
+				64528FE52B20838D00855E7E /* SendMailView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		64528FA62B20800E00855E7E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64528FA72B20800E00855E7E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		64528FAA2B20800E00855E7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		64528FAB2B20800E00855E7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		64528FAD2B20800E00855E7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 792C6D2E752D6E93FB346A6E /* Pods-neobis_ios_auth.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W2CT3M99U7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = neobis_ios_auth/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Kr57.neobis-ios-auth";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		64528FAE2B20800E00855E7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D257BC9FDEA04D929002AA37 /* Pods-neobis_ios_auth.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W2CT3M99U7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = neobis_ios_auth/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Kr57.neobis-ios-auth";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64528F932B20800D00855E7E /* Build configuration list for PBXProject "neobis_ios_auth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64528FAA2B20800E00855E7E /* Debug */,
+				64528FAB2B20800E00855E7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64528FAC2B20800E00855E7E /* Build configuration list for PBXNativeTarget "neobis_ios_auth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64528FAD2B20800E00855E7E /* Debug */,
+				64528FAE2B20800E00855E7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64528F902B20800D00855E7E /* Project object */;
+}
