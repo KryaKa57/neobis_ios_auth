@@ -72,11 +72,11 @@ class LoginView: UIView {
             make.centerX.equalToSuperview()
         }
         self.passwordTextField.snp.makeConstraints { make in
-            make.top.equalTo(loginTextField.snp.bottom).offset(8)
+            make.top.equalTo(loginTextField.snp.bottom).offset(12)
             make.centerX.equalToSuperview()
         }
         self.enterButton.snp.makeConstraints { make in
-            make.top.equalTo(passwordTextField.snp.bottom).offset(16)
+            make.top.equalTo(passwordTextField.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
         }
         self.registerButton.snp.makeConstraints { make in

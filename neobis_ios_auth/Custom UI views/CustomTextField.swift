@@ -41,10 +41,11 @@ class CustomTextField: UITextField {
         
     private func setup(isHidden: Bool) {
         let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(rgb: 0x767676),
-                              NSAttributedString.Key.font: UIFont(name: "gothampro-medium", size: 16)!]
+                              NSAttributedString.Key.font: UIFont(name: "gothampro", size: 16)!]
         self.backgroundColor = UIColor(rgb: 0xF8F8F8)
         self.attributedPlaceholder = NSAttributedString(string: textValue, attributes: textAttributes)
         self.layer.cornerRadius = 16
+        self.defaultTextAttributes = textAttributes
         
         if isHidden {
             let view = UIView()

@@ -33,6 +33,7 @@
 		64528FF82B20843300855E7E /* gothampro_lightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64528FEE2B20843300855E7E /* gothampro_lightitalic.ttf */; };
 		64528FF92B20843300855E7E /* gothampro_blackitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64528FEF2B20843300855E7E /* gothampro_blackitalic.ttf */; };
 		64528FFA2B20843300855E7E /* gothampro_bolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64528FF02B20843300855E7E /* gothampro_bolditalic.ttf */; };
+		64528FFF2B20B35B00855E7E /* ViewLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528FFE2B20B35B00855E7E /* ViewLoadable.swift */; };
 		75F4017B0A12C4E8CFE78F32 /* Pods_neobis_ios_auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591288E31A82AB1BF2AAFC53 /* Pods_neobis_ios_auth.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		64528FEE2B20843300855E7E /* gothampro_lightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_lightitalic.ttf; sourceTree = "<group>"; };
 		64528FEF2B20843300855E7E /* gothampro_blackitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_blackitalic.ttf; sourceTree = "<group>"; };
 		64528FF02B20843300855E7E /* gothampro_bolditalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_bolditalic.ttf; sourceTree = "<group>"; };
+		64528FFE2B20B35B00855E7E /* ViewLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLoadable.swift; sourceTree = "<group>"; };
 		792C6D2E752D6E93FB346A6E /* Pods-neobis_ios_auth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-neobis_ios_auth.debug.xcconfig"; path = "Target Support Files/Pods-neobis_ios_auth/Pods-neobis_ios_auth.debug.xcconfig"; sourceTree = "<group>"; };
 		D257BC9FDEA04D929002AA37 /* Pods-neobis_ios_auth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-neobis_ios_auth.release.xcconfig"; path = "Target Support Files/Pods-neobis_ios_auth/Pods-neobis_ios_auth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +105,7 @@
 		64528F9A2B20800D00855E7E /* neobis_ios_auth */ = {
 			isa = PBXGroup;
 			children = (
+				64528FA92B20800E00855E7E /* Info.plist */,
 				64528FCF2B20826100855E7E /* Custom UI views */,
 				64528FCE2B20825800855E7E /* MainScreen */,
 				64528FCD2B20824A00855E7E /* LoginScreen */,
@@ -110,7 +113,7 @@
 				64528FCB2B20823200855E7E /* SendMailScreen */,
 				64528FAF2B20804800855E7E /* Supporting files */,
 				64528FD02B20826D00855E7E /* Extensions */,
-				64528FA92B20800E00855E7E /* Info.plist */,
+				64528FFD2B20B34500855E7E /* Protocols */,
 			);
 			path = neobis_ios_auth;
 			sourceTree = "<group>";
@@ -139,8 +142,8 @@
 		64528FCC2B20824000855E7E /* RegisterScreen */ = {
 			isa = PBXGroup;
 			children = (
-				64528FDE2B20834E00855E7E /* RegisterView.swift */,
 				64528FE02B20836800855E7E /* RegisterController.swift */,
+				64528FDE2B20834E00855E7E /* RegisterView.swift */,
 			);
 			path = RegisterScreen;
 			sourceTree = "<group>";
@@ -196,6 +199,14 @@
 				64528FF02B20843300855E7E /* gothampro_bolditalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		64528FFD2B20B34500855E7E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				64528FFE2B20B35B00855E7E /* ViewLoadable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		6EB56DB548A7CA4DB22AA1BE /* Frameworks */ = {
@@ -347,6 +358,7 @@
 				64528FD42B2082D000855E7E /* CustomButton.swift in Sources */,
 				64528FDB2B20832300855E7E /* MainController.swift in Sources */,
 				64528FCA2B20819100855E7E /* LoginView.swift in Sources */,
+				64528FFF2B20B35B00855E7E /* ViewLoadable.swift in Sources */,
 				64528FE32B20837C00855E7E /* SendMailController.swift in Sources */,
 				64528FE12B20836800855E7E /* RegisterController.swift in Sources */,
 				64528F9E2B20800D00855E7E /* SceneDelegate.swift in Sources */,

@@ -11,10 +11,13 @@ class LoginController: UIViewController {
 
     private var loginView: LoginView
     private let systemBounds = UIScreen.main.bounds
+
+    override func loadView() {
+        view = loginView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.createView()
         self.addTargets()
         
         loginView.loginTextField.delegate = self
@@ -28,12 +31,6 @@ class LoginController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func createView() {
-        loginView.frame = CGRect(x: 0, y: 0, width: systemBounds.width, height: systemBounds.height)
-        loginView.center = view.center
-        view.addSubview(loginView)
     }
     
     private func addTargets() {

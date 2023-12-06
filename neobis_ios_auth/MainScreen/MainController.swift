@@ -13,6 +13,7 @@ class MainController: UIViewController {
     private var mainView: MainView
     private let systemBounds = UIScreen.main.bounds
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.createView()

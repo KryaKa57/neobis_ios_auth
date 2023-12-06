@@ -8,14 +8,19 @@
 import Foundation
 import UIKit
 
-class RegisterController: UIViewController {
+
+class RegisterController: UIViewController, ViewLoadable {
+    typealias MainView = RegisterView
+    let registerView = MainView()
     
-    private var registerView: RegisterView
     private let systemBounds = UIScreen.main.bounds
+    
+    override func loadView() {
+        view = registerView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.createNavigation()
         self.createView()
         
         registerView.emailTextField.delegate = self
@@ -36,7 +41,6 @@ class RegisterController: UIViewController {
     
     
     init(view: RegisterView) {
-        self.registerView = view
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -90,23 +94,14 @@ class RegisterController: UIViewController {
         self.registerView.displayKeyBoard(CGFloat(), isDisplay: false)
     }
     
-    private func createNavigation() {
+    private func createView() {
         self.navigationItem.title = "Регистрация"
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.viewSafeAreaInsetsDidChange()
         
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        
-        registerView.frame = CGRect(x: 0, y: 0, width: systemBounds.width, height: systemBounds.height)
-        registerView.center = view.center
-        view.addSubview(registerView)
-    }
-    
-    private func createView() {
-        registerView.frame = CGRect(x: 0, y: 0, width: systemBounds.width, height: systemBounds.height)
-        registerView.center = view.center
-        view.addSubview(registerView)
+        view = registerView
     }
 }
 

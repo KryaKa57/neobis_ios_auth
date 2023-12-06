@@ -104,7 +104,6 @@ class RegisterView: UIView {
         super.init(frame: frame)
         initialize()
         setConstraints()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -118,6 +117,7 @@ class RegisterView: UIView {
         differentPassLabel.style = .error
         incorrectFormatEmailLabel.style = .error
         
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(scrollView)
         scrollView.addSubview(emailStackView)
         scrollView.addSubview(createAccountLabel)

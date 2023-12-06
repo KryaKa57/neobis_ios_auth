@@ -85,8 +85,7 @@ class SendMailView: UIView {
         }
         self.nextButton.snp.makeConstraints { make in
             make.top.equalTo(emailImageView.snp.bottom).offset(32)
-            make.leading.trailing.equalToSuperview().inset(32)
-            make.height.equalTo(systemBounds.height * 0.06)
+            make.centerX.equalToSuperview()
             make.bottom.lessThanOrEqualToSuperview().inset(32)
         }
     }
