@@ -34,6 +34,13 @@
 		64528FF92B20843300855E7E /* gothampro_blackitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64528FEF2B20843300855E7E /* gothampro_blackitalic.ttf */; };
 		64528FFA2B20843300855E7E /* gothampro_bolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64528FF02B20843300855E7E /* gothampro_bolditalic.ttf */; };
 		64528FFF2B20B35B00855E7E /* ViewLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64528FFE2B20B35B00855E7E /* ViewLoadable.swift */; };
+		645290022B20D4F100855E7E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645290012B20D4F000855E7E /* Endpoint.swift */; };
+		645290042B20D50F00855E7E /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645290032B20D50F00855E7E /* HTTP.swift */; };
+		645290062B20D52600855E7E /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645290052B20D52600855E7E /* RegisterService.swift */; };
+		6452900B2B20DE5400855E7E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6452900A2B20DE5400855E7E /* Models.swift */; };
+		6452900D2B20E92300855E7E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6452900C2B20E92300855E7E /* LoginViewModel.swift */; };
+		6452900F2B20F05C00855E7E /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6452900E2B20F05C00855E7E /* RegisterViewModel.swift */; };
+		645290112B24520700855E7E /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645290102B24520700855E7E /* LoginService.swift */; };
 		75F4017B0A12C4E8CFE78F32 /* Pods_neobis_ios_auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591288E31A82AB1BF2AAFC53 /* Pods_neobis_ios_auth.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +75,13 @@
 		64528FEF2B20843300855E7E /* gothampro_blackitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_blackitalic.ttf; sourceTree = "<group>"; };
 		64528FF02B20843300855E7E /* gothampro_bolditalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothampro_bolditalic.ttf; sourceTree = "<group>"; };
 		64528FFE2B20B35B00855E7E /* ViewLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLoadable.swift; sourceTree = "<group>"; };
+		645290012B20D4F000855E7E /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		645290032B20D50F00855E7E /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		645290052B20D52600855E7E /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		6452900A2B20DE5400855E7E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		6452900C2B20E92300855E7E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		6452900E2B20F05C00855E7E /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		645290102B24520700855E7E /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		792C6D2E752D6E93FB346A6E /* Pods-neobis_ios_auth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-neobis_ios_auth.debug.xcconfig"; path = "Target Support Files/Pods-neobis_ios_auth/Pods-neobis_ios_auth.debug.xcconfig"; sourceTree = "<group>"; };
 		D257BC9FDEA04D929002AA37 /* Pods-neobis_ios_auth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-neobis_ios_auth.release.xcconfig"; path = "Target Support Files/Pods-neobis_ios_auth/Pods-neobis_ios_auth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +119,8 @@
 		64528F9A2B20800D00855E7E /* neobis_ios_auth */ = {
 			isa = PBXGroup;
 			children = (
+				645290092B20DE3F00855E7E /* Models */,
+				645290002B20D4DB00855E7E /* API */,
 				64528FA92B20800E00855E7E /* Info.plist */,
 				64528FCF2B20826100855E7E /* Custom UI views */,
 				64528FCE2B20825800855E7E /* MainScreen */,
@@ -144,6 +160,7 @@
 			children = (
 				64528FE02B20836800855E7E /* RegisterController.swift */,
 				64528FDE2B20834E00855E7E /* RegisterView.swift */,
+				6452900E2B20F05C00855E7E /* RegisterViewModel.swift */,
 			);
 			path = RegisterScreen;
 			sourceTree = "<group>";
@@ -153,6 +170,7 @@
 			children = (
 				64528F9F2B20800D00855E7E /* LoginController.swift */,
 				64528FC92B20819100855E7E /* LoginView.swift */,
+				6452900C2B20E92300855E7E /* LoginViewModel.swift */,
 			);
 			path = LoginScreen;
 			sourceTree = "<group>";
@@ -207,6 +225,25 @@
 				64528FFE2B20B35B00855E7E /* ViewLoadable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		645290002B20D4DB00855E7E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				645290012B20D4F000855E7E /* Endpoint.swift */,
+				645290032B20D50F00855E7E /* HTTP.swift */,
+				645290052B20D52600855E7E /* RegisterService.swift */,
+				645290102B24520700855E7E /* LoginService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		645290092B20DE3F00855E7E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6452900A2B20DE5400855E7E /* Models.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6EB56DB548A7CA4DB22AA1BE /* Frameworks */ = {
@@ -358,9 +395,16 @@
 				64528FD42B2082D000855E7E /* CustomButton.swift in Sources */,
 				64528FDB2B20832300855E7E /* MainController.swift in Sources */,
 				64528FCA2B20819100855E7E /* LoginView.swift in Sources */,
+				6452900D2B20E92300855E7E /* LoginViewModel.swift in Sources */,
 				64528FFF2B20B35B00855E7E /* ViewLoadable.swift in Sources */,
 				64528FE32B20837C00855E7E /* SendMailController.swift in Sources */,
+				645290042B20D50F00855E7E /* HTTP.swift in Sources */,
+				645290022B20D4F100855E7E /* Endpoint.swift in Sources */,
 				64528FE12B20836800855E7E /* RegisterController.swift in Sources */,
+				6452900B2B20DE5400855E7E /* Models.swift in Sources */,
+				645290062B20D52600855E7E /* RegisterService.swift in Sources */,
+				6452900F2B20F05C00855E7E /* RegisterViewModel.swift in Sources */,
+				645290112B24520700855E7E /* LoginService.swift in Sources */,
 				64528F9E2B20800D00855E7E /* SceneDelegate.swift in Sources */,
 				64528FD22B20829D00855E7E /* Extension + UIColor.swift in Sources */,
 				64528FD92B20830F00855E7E /* CustomLabel.swift in Sources */,

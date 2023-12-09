@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 
-class RegisterController: UIViewController, ViewLoadable {
-    typealias MainView = RegisterView
-    let registerView = MainView()
+class RegisterController: UIViewController {
     
     private let systemBounds = UIScreen.main.bounds
+    let registerView = RegisterView()
+    let registerViewModel: RegisterViewModel
     
     override func loadView() {
         view = registerView
@@ -27,20 +27,18 @@ class RegisterController: UIViewController, ViewLoadable {
         registerView.createLoginTextField.delegate = self
         registerView.createPassTextField.delegate = self
         registerView.checkPasswordTextField.delegate = self
-        
+
         registerView.createPassTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         registerView.allTextFields.forEach({
             $0.addTarget(self, action: #selector(isEverythingCorrect(_:)), for: .editingChanged)
         })
         registerView.nextButton.addTarget(self, action: #selector(goToNextScreen(_:)), for: .touchUpInside)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     
-    init(view: RegisterView) {
+    init(view: RegisterView, viewModel: RegisterViewModel) {
+        self.registerViewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -49,6 +47,13 @@ class RegisterController: UIViewController, ViewLoadable {
     }
     
     @objc private func goToNextScreen(_ button: UIButton) {
+        let registerData = Register(username: registerView.createLoginTextField.text ?? ""
+                                    , email: registerView.emailTextField.text ?? ""
+                                    , password1: registerView.createPassTextField.text ?? ""
+                                    , password2: registerView.createPassTextField.text ?? "")
+        
+        registerViewModel.postData(data: registerData)
+        
         let view = SendMailView()
         let nextScreen = SendMailController(view: view, email: registerView.emailTextField.text ?? "")
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -98,10 +103,9 @@ class RegisterController: UIViewController, ViewLoadable {
         self.navigationItem.title = "Регистрация"
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.viewSafeAreaInsetsDidChange()
-        
+
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        view = registerView
     }
 }
 

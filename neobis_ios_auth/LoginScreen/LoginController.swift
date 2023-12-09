@@ -10,6 +10,7 @@ import UIKit
 class LoginController: UIViewController {
 
     private var loginView: LoginView
+    private var loginViewModel: LoginViewModel
     private let systemBounds = UIScreen.main.bounds
 
     override func loadView() {
@@ -24,8 +25,9 @@ class LoginController: UIViewController {
         loginView.passwordTextField.delegate = self
     }
     
-    init(view: LoginView) {
+    init(view: LoginView, viewModel: LoginViewModel = LoginViewModel()) {
         self.loginView = view
+        self.loginViewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -40,18 +42,27 @@ class LoginController: UIViewController {
     
     @objc func goToRegisterScreen() {
         let view = RegisterView()
-        let nextScreen = RegisterController(view: view)
+        let viewModel = RegisterViewModel()
+        let nextScreen = RegisterController(view: view, viewModel: viewModel)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationBar.tintColor = UIColor(rgb: 0x000000, alpha: 0)
         self.navigationController?.pushViewController(nextScreen, animated: true)
     }
     
     @objc func goToMainScreen() {
-        let view = MainView()
-        let nextScreen = MainController(view: view)
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        self.navigationController?.navigationBar.tintColor = UIColor(rgb: 0x000000, alpha: 0)
-        self.navigationController?.pushViewController(nextScreen, animated: true)
+        let loginData = Login(username: loginView.loginTextField.text ?? ""
+                            , email: ""
+                            , password: loginView.passwordTextField.text ?? "")
+        loginViewModel.postData(data: loginData)
+        
+        print(loginViewModel.isUserLogined)
+        if loginViewModel.isUserLogined {
+            let view = MainView()
+            let nextScreen = MainController(view: view)
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            self.navigationController?.navigationBar.tintColor = UIColor(rgb: 0x000000, alpha: 0)
+            self.navigationController?.pushViewController(nextScreen, animated: true)
+        }
     }
 }
 
