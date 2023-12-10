@@ -44,15 +44,24 @@ class MainController: UIViewController {
     }
     
     @objc func goToRootScreen() {
+        let customAlert = ExitAlertViewController(vc: self)
+        customAlert.modalPresentationStyle = .overFullScreen
+        present(customAlert, animated: true, completion: nil)
+    }
+    
+    func navigateToRootScreen() {
         self.navigationController?.popToRootViewController(animated: true)
     }
 }
 
 
 class ExitAlertViewController: UIViewController {
+    private var mainVC: MainController
     private let systemBounds = UIScreen.main.bounds
     
-    init(mainVC: SendMailController) {
+    
+    init(vc: MainController) {
+        self.mainVC = vc
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -64,7 +73,7 @@ class ExitAlertViewController: UIViewController {
         super.viewDidLoad()
         
         let alertWidth: CGFloat = systemBounds.width - 64
-        let alertHeight: CGFloat = 200
+        let alertHeight: CGFloat = 250
         
         let xPos = (view.frame.width - alertWidth) / 2
         let yPos = (view.frame.height - alertHeight) / 2
@@ -78,34 +87,46 @@ class ExitAlertViewController: UIViewController {
         view.backgroundColor = UIColor(rgb: 0x000000, alpha: 0.8)
         
         let titleLabel = UILabel(frame: CGRect(x: xPos + 20, y: yPos + 20, width: alertWidth - 40, height: 30))
-        titleLabel.text = "Мы выслали еще одно письмо на указанную тобой почту example@gmail.com"
+        titleLabel.text = "Выйти"
         titleLabel.textAlignment = .center
         titleLabel.textColor = .black
         titleLabel.numberOfLines = 0
         view.addSubview(titleLabel)
         
         let messageLabel = UILabel(frame: CGRect(x: xPos + 20, y: yPos + 60, width: alertWidth - 40, height: 60))
-        messageLabel.text = "Не забудь проверить ящик “Спам”!11!!!!"
+        messageLabel.text = "Точно выйти?"
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
         messageLabel.textColor = .black
         messageLabel.numberOfLines = 0
         view.addSubview(messageLabel)
         
-        let closeButton = UIButton(type: .system)
-        closeButton.frame = CGRect(x: xPos + 20, y: yPos + 140, width: alertWidth - 40, height: 40)
-        closeButton.setTitle("Понятно!", for: .normal)
-        closeButton.addTarget(self, action: #selector(closeAlert), for: .touchUpInside)
-        closeButton.backgroundColor = .black
-        closeButton.setTitleColor(.white, for: .normal)
-        closeButton.layer.cornerRadius = 8
-        view.addSubview(closeButton)
+        let confirmButton = UIButton(type: .system)
+        confirmButton.frame = CGRect(x: xPos + 20, y: yPos + 140, width: alertWidth - 40, height: 40)
+        confirmButton.setTitle("Да, точно!", for: .normal)
+        confirmButton.addTarget(self, action: #selector(closeAllAlert), for: .touchUpInside)
+        confirmButton.backgroundColor = .black
+        confirmButton.setTitleColor(.white, for: .normal)
+        confirmButton.layer.cornerRadius = 8
+        view.addSubview(confirmButton)
+        
+        let rejectButton = UIButton(type: .system)
+        rejectButton.frame = CGRect(x: xPos + 20, y: yPos + 200, width: alertWidth - 40, height: 40)
+        rejectButton.setTitle("Нет, остаться", for: .normal)
+        rejectButton.addTarget(self, action: #selector(closeAlert), for: .touchUpInside)
+        rejectButton.backgroundColor = .white
+        rejectButton.setTitleColor(.black, for: .normal)
+        rejectButton.layer.cornerRadius = 8
+        view.addSubview(rejectButton)
+    }
+    
+    @objc func closeAllAlert() {
+        dismiss(animated: true) {
+            self.mainVC.navigateToRootScreen()
+        }
     }
     
     @objc func closeAlert() {
         dismiss(animated: true)
     }
 }
-
-
-
