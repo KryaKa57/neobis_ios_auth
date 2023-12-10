@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum RegisterServiceError: Error {
+enum RegisterServiceError: Error, Equatable {
     case invalidURL
     case invalidResponse
     case invalidData

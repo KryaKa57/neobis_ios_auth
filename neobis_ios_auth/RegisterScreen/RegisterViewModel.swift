@@ -17,15 +17,6 @@ class RegisterViewModel {
     }
     
     public func postData(data registerData: Register) {
-        let endpoint = Endpoint.postRegistration()
-
-        RegisterService.postData(registerData: registerData, with: endpoint) { [weak self] result in
-            switch result {
-            case .success(_):
-                print("success")
-            case .failure(let error):
-                print(error)
-            }
-        }
+        
     }
 }

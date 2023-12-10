@@ -9,26 +9,19 @@ import Foundation
 
 class LoginViewModel {
     
-    var isUserLogined: Bool = false
-    var loginErrorMessage: String = ""
+    var onUserLogined: (() -> Void)?
+    var onErrorMessage: ((LoginServiceError) -> Void)?
+    
+    private(set) var isUserLogined: Bool = false {
+        didSet {
+            self.onUserLogined?()
+        }
+    }
     
     init() {
         //self.postData()
     }
     
-    public func postData(data loginData: Login) {
-        
-        let endpoint = Endpoint.postLogin()
-
-        LoginService.postData(loginData: loginData, with: endpoint) { [weak self] result in
-            switch result {
-            case .success(_):
-                self?.isUserLogined = true
-            case .failure(let error):
-                self?.loginErrorMessage = error.localizedDescription
-            }
-        }
-    }
 }
 
 

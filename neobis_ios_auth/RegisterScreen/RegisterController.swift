@@ -52,14 +52,64 @@ class RegisterController: UIViewController {
                                     , password1: registerView.createPassTextField.text ?? ""
                                     , password2: registerView.createPassTextField.text ?? "")
         
-        registerViewModel.postData(data: registerData)
+        let endpoint = Endpoint.postRegistration()
+
+        RegisterService.postData(registerData: registerData, with: endpoint) { [weak self] result in
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self?.goToNextScreen()
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    if error == .invalidData {
+                        self?.showLoginFailurePopUp("Пользователь с таким логином или почтой уже существует")
+                    } else {
+                        self?.showLoginFailurePopUp("Что-то пошло не так :/")
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    func showLoginFailurePopUp(_ errorText: String) {
+        let safeAreaTopInset = view.safeAreaInsets.top
+        let popUpView = UIView(frame: CGRect(x: 32, y: safeAreaTopInset - 64 , width: view.frame.width - 64, height: 64))
         
+        popUpView.layer.borderWidth = 1.0
+        popUpView.layer.borderColor = UIColor.red.cgColor
+        popUpView.layer.cornerRadius = 16
+        popUpView.backgroundColor = .white
+        
+        let messageLabel = UILabel(frame: CGRect(x: 16, y: 0, width: popUpView.frame.width, height: popUpView.frame.height))
+        messageLabel.text = errorText
+        messageLabel.textColor = .red // Red text color
+        messageLabel.numberOfLines = 0
+        
+        popUpView.addSubview(messageLabel)
+        view.addSubview(popUpView)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+            popUpView.frame.origin.y = safeAreaTopInset
+        }, completion: { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                UIView.animate(withDuration: 0.5, animations: {
+                    popUpView.frame.origin.y = safeAreaTopInset - 64
+                }, completion: { _ in
+                    popUpView.removeFromSuperview()
+                })
+            }
+        })
+    }
+
+    
+    private func goToNextScreen() {
         let view = SendMailView()
         let nextScreen = SendMailController(view: view, email: registerView.emailTextField.text ?? "")
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationBar.tintColor = UIColor(rgb: 0x000000, alpha: 0)
         self.navigationController?.pushViewController(nextScreen, animated: true)
-        
     }
     
     
