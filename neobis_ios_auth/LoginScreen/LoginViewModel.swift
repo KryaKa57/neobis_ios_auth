@@ -12,16 +12,18 @@ class LoginViewModel {
     var onUserLogined: (() -> Void)?
     var onErrorMessage: ((LoginServiceError) -> Void)?
     
-    private(set) var isUserLogined: Bool = false {
-        didSet {
-            self.onUserLogined?()
+    func postData(_ data: Login) {
+        let endpoint = Endpoint.postLogin()
+
+        LoginService.postData(loginData: data, with: endpoint) { [weak self] result in
+            switch result {
+            case .success:
+                self?.onUserLogined?()
+            case .failure(let error):
+                self?.onErrorMessage?(error)
+            }
         }
     }
-    
-    init() {
-        //self.postData()
-    }
-    
 }
 
 

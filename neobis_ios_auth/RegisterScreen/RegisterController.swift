@@ -23,19 +23,10 @@ class RegisterController: UIViewController {
         super.viewDidLoad()
         self.createView()
         
-        registerView.emailTextField.delegate = self
-        registerView.createLoginTextField.delegate = self
-        registerView.createPassTextField.delegate = self
-        registerView.checkPasswordTextField.delegate = self
-
-        registerView.createPassTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        registerView.allTextFields.forEach({
-            $0.addTarget(self, action: #selector(isEverythingCorrect(_:)), for: .editingChanged)
-        })
-        registerView.nextButton.addTarget(self, action: #selector(goToNextScreen(_:)), for: .touchUpInside)
-
+        self.addTargets()
+        self.addDelegates()
+        self.assignRequestClosures()
     }
-    
     
     init(view: RegisterView, viewModel: RegisterViewModel) {
         self.registerViewModel = viewModel
@@ -46,30 +37,53 @@ class RegisterController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc private func goToNextScreen(_ button: UIButton) {
+    private func createView() {
+        self.navigationItem.title = "Регистрация"
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.viewSafeAreaInsetsDidChange()
+
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+    }
+    
+    private func addTargets() {
+        registerView.createPassTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        registerView.allTextFields.forEach({
+            $0.addTarget(self, action: #selector(isEverythingCorrect(_:)), for: .editingChanged)
+        })
+        registerView.nextButton.addTarget(self, action: #selector(postData(_:)), for: .touchUpInside)
+    }
+    
+    private func addDelegates() {
+        registerView.emailTextField.delegate = self
+        registerView.createLoginTextField.delegate = self
+        registerView.createPassTextField.delegate = self
+        registerView.checkPasswordTextField.delegate = self
+    }
+    
+    private func assignRequestClosures() {
+        self.registerViewModel.onUserRegistered = { [weak self] in
+            DispatchQueue.main.async {
+                self?.goToNextScreen()
+            }
+        }
+        self.registerViewModel.onErrorMessage = { [weak self] error in
+            DispatchQueue.main.async {
+                if error == .invalidData {
+                    self?.showLoginFailurePopUp("Пользователь с таким логином или почтой уже существует")
+                } else {
+                    self?.showLoginFailurePopUp("Что-то пошло не так :/")
+                }
+            }
+        }
+    }
+    
+    @objc private func postData(_ button: UIButton) {
         let registerData = Register(username: registerView.createLoginTextField.text ?? ""
                                     , email: registerView.emailTextField.text ?? ""
                                     , password1: registerView.createPassTextField.text ?? ""
                                     , password2: registerView.createPassTextField.text ?? "")
-        
-        let endpoint = Endpoint.postRegistration()
-
-        RegisterService.postData(registerData: registerData, with: endpoint) { [weak self] result in
-            switch result {
-            case .success(_):
-                DispatchQueue.main.async {
-                    self?.goToNextScreen()
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    if error == .invalidData {
-                        self?.showLoginFailurePopUp("Пользователь с таким логином или почтой уже существует")
-                    } else {
-                        self?.showLoginFailurePopUp("Что-то пошло не так :/")
-                    }
-                }
-            }
-        }
+        registerViewModel.postData(data: registerData)
     }
     
     
@@ -105,8 +119,7 @@ class RegisterController: UIViewController {
 
     
     private func goToNextScreen() {
-        let view = SendMailView()
-        let nextScreen = SendMailController(view: view, email: registerView.emailTextField.text ?? "")
+        let nextScreen = SendMailController(view: SendMailView(), email: registerView.emailTextField.text ?? "")
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationBar.tintColor = UIColor(rgb: 0x000000, alpha: 0)
         self.navigationController?.pushViewController(nextScreen, animated: true)
@@ -137,25 +150,6 @@ class RegisterController: UIViewController {
             return
         }
         registerView.nextButton.isEnabled = true
-    }
-    
-    @objc private func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            self.registerView.displayKeyBoard(keyboardSize.height, isDisplay: true)
-        }
-    }
-
-    @objc private func keyboardWillHide(notification: NSNotification) {
-        self.registerView.displayKeyBoard(CGFloat(), isDisplay: false)
-    }
-    
-    private func createView() {
-        self.navigationItem.title = "Регистрация"
-        self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.viewSafeAreaInsetsDidChange()
-
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
 }
 

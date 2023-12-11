@@ -80,8 +80,4 @@ class MainView: UIView {
             make.bottom.equalToSuperview().inset(64)
         }
     }
-    
-    
-    public func configure() {
-    }
 }

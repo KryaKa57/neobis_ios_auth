@@ -20,9 +20,11 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addTargets()
+        self.assignRequestClosures()
         
         loginView.loginTextField.delegate = self
         loginView.passwordTextField.delegate = self
+
     }
     
     init(view: LoginView, viewModel: LoginViewModel = LoginViewModel()) {
@@ -35,18 +37,21 @@ class LoginController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func assignRequestClosures() {
+        self.loginViewModel.onUserLogined = { [weak self] in
+            DispatchQueue.main.async {
+                self?.goToMainScreen()
+            }
+        }
+        self.loginViewModel.onErrorMessage = { [weak self] error in
+            DispatchQueue.main.async {
+                self?.showLoginFailurePopUp()
+            }
+        }
+    }
     private func addTargets() {
         loginView.enterButton.addTarget(self, action: #selector(loginUser), for: .touchUpInside)
         loginView.registerButton.addTarget(self, action: #selector(goToRegisterScreen), for: .touchUpInside)
-    }
-    
-    @objc func goToRegisterScreen() {
-        let view = RegisterView()
-        let viewModel = RegisterViewModel()
-        let nextScreen = RegisterController(view: view, viewModel: viewModel)
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        self.navigationController?.navigationBar.tintColor = UIColor(rgb: 0x000000, alpha: 0)
-        self.navigationController?.pushViewController(nextScreen, animated: true)
     }
     
     @objc func loginUser() {
@@ -54,26 +59,18 @@ class LoginController: UIViewController {
                             , email: ""
                             , password: loginView.passwordTextField.text ?? "")
         
-        
-        let endpoint = Endpoint.postLogin()
-
-        LoginService.postData(loginData: loginData, with: endpoint) { [weak self] result in
-            switch result {
-            case .success:
-                DispatchQueue.main.async {
-                    self?.goToMainScreen()
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self?.showLoginFailurePopUp()
-                }
-            }
-        }
+        loginViewModel.postData(loginData)
+    }
+    
+    @objc func goToRegisterScreen() {
+        let nextScreen = RegisterController(view: RegisterView(), viewModel: RegisterViewModel())
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationBar.tintColor = UIColor(rgb: 0x000000, alpha: 0)
+        self.navigationController?.pushViewController(nextScreen, animated: true)
     }
     
     private func goToMainScreen() {
-        let view = MainView()
-        let nextScreen = MainController(view: view, isNewUser: false)
+        let nextScreen = MainController(view: MainView(), isNewUser: false)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationBar.tintColor = UIColor(rgb: 0x000000, alpha: 0)
         self.navigationController?.pushViewController(nextScreen, animated: true)

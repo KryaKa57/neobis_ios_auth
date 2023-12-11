@@ -13,22 +13,6 @@ struct Login: Codable {
     let password: String
 }
 
-struct PasswordChange{
-    let new_password1: String
-    let new_password2: String
-}
-
-struct PasswordReset{
-    let email: String
-}
-
-struct PasswordResetConfirm{
-    let new_password1: String
-    let new_password2: String
-    let uid: String
-    let token: String
-}
-
 struct Register: Codable{
     let username: String
     let email: String
@@ -36,14 +20,6 @@ struct Register: Codable{
     let password2: String
 }
 
-struct ResendEmailVerification{
-    let email: String
-}
-
 struct Token: Codable{
-    let key: String
-}
-
-struct VerifyEmail{
     let key: String
 }

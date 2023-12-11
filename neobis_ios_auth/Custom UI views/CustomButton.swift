@@ -56,10 +56,10 @@ class CustomButton: UIButton {
         self.layer.cornerRadius = 16
     }
     
-    private func setSize() {
+    func setSize(_ height: Int = 50, _ width: Int = 330) {
         self.snp.makeConstraints { make in
-            make.width.equalTo(330)
-            make.height.equalTo(50)
+            make.width.equalTo(width)
+            make.height.equalTo(height)
         }
     }
 }

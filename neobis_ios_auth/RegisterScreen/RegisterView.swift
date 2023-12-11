@@ -118,6 +118,7 @@ class RegisterView: UIView {
         incorrectFormatEmailLabel.style = .error
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        
         self.addSubview(scrollView)
         scrollView.addSubview(emailStackView)
         scrollView.addSubview(createAccountLabel)
@@ -174,10 +175,6 @@ class RegisterView: UIView {
             }
         }
     }
-    
-    public func configure() {
-    }
-    
     
     public func displayTextFieldError(textField: UITextField) {
         if textField == checkPasswordTextField {

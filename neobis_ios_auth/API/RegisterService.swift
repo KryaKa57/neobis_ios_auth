@@ -35,10 +35,8 @@ class RegisterService {
             }
             
             do {
-              // create json object from data or use JSONDecoder to convert to Model stuct
                 if let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String: Any] {
                 print(jsonResponse)
-                // handle json response
               } else {
                 print("data maybe corrupted or in wrong format")
                 throw URLError(.badServerResponse)
