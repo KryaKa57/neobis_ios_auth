@@ -13,6 +13,11 @@ class SendMailController: UIViewController {
     private var sendMailView: SendMailView
     private let systemBounds = UIScreen.main.bounds
     
+    
+    override func loadView() {
+        view = sendMailView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.createView()
@@ -41,10 +46,6 @@ class SendMailController: UIViewController {
         self.navigationItem.title = "Регистрация"
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.viewSafeAreaInsetsDidChange()
-        
-        sendMailView.frame = CGRect(x: 0, y: 0, width: systemBounds.width, height: systemBounds.height)
-        sendMailView.center = view.center
-        view.addSubview(sendMailView)
     }
     
     func navigateToNextScreen() {

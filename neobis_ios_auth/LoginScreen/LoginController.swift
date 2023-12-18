@@ -17,6 +17,7 @@ class LoginController: UIViewController {
         view = loginView
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addTargets()

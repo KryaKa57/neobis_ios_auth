@@ -46,6 +46,21 @@ class MainView: UIView {
         super.init(frame: frame)
         initialize()
         setConstraints()
+        
+        let point = (-10, 10)
+
+        switch point {
+        case let (x, y) where x == y:
+            print("\(x) and \(y) are equal")
+
+        case let (x, y) where abs(x) == abs(y):
+            print("\(x) and \(y) are equal modulo")
+
+        case let (x, y):
+            print("\(x) and \(y) are not equal")
+        }
+        
+        
     }
     
     required init?(coder: NSCoder) {
